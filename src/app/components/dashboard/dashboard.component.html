@@ -1,0 +1,52 @@
+<div class="search-container">
+  <div class="header-container">
+    <button
+      mat-raised-button
+      (click)="openAddRestaurantDialog()"
+      class="add-restaurant-button"
+    >
+      Add a Restaurant
+    </button>
+  </div>
+
+  <mat-form-field>
+    <mat-label>Search Restaurants</mat-label>
+    <input
+      matInput
+      (input)="applyFilter($event)"
+      placeholder="Search by name"
+    />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</div>
+
+<div class="restaurant-container">
+  <div *ngFor="let restaurant of paginatedRestaurants" class="restaurant-card">
+    <img
+      [src]="imagePath"
+      alt="{{ restaurant.name }}"
+      class="restaurant-image"
+    />
+    <div class="restaurant-info">
+      <h3>{{ restaurant.name }}</h3>
+      <p>{{ restaurant.description }}</p>
+      <p>Location: {{ restaurant.address }}</p>
+    </div>
+    <div class="card-actions">
+      <button (click)="editRestaurant(restaurant)">
+        <i class="fas fa-pencil"></i>Edit
+      </button>
+      <button (click)="deleteRestaurant(restaurant)">
+        <i class="fas fa-trash-alt"></i>Delete
+      </button>
+    </div>
+  </div>
+</div>
+
+<mat-paginator
+  [length]="filteredRestaurants.length"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[2, 4, 6, 8]"
+  (page)="onPageChange($event)"
+>
+</mat-paginator>

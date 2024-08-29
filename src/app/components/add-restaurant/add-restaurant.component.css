@@ -1,0 +1,43 @@
+.restaurant-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.form-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.full-width {
+  flex: 1 1 100%;
+}
+
+.half-width {
+  flex: 1 1 calc(50% - 16px);
+}
+
+.checkbox-field {
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-checkbox {
+  padding-top: 8px;
+}

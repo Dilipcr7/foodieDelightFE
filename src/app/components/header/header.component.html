@@ -1,0 +1,29 @@
+<header class="header-bar">
+  <div class="header-content">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo" class="logo-image" />
+      Foodie Delight
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a
+            routerLink="/home"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a routerLink="/manageRestaurants" routerLinkActive="active-link"
+            >Manage Restaurants</a
+          >
+        </li>
+        <li>
+          <a routerLink="/aboutUs" routerLinkActive="active-link">About Us</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="logout-button" (click)="logout()">Logout</button>
+  </div>
+</header>
